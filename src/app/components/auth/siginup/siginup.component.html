@@ -1,0 +1,28 @@
+<mat-card class="container">
+    <mat-card-title>Crie sua conta!</mat-card-title>
+    <mat-card-content class="column">
+        <mat-form-field appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput required [(ngModel)]="user.nome" name="name" type="text" placeholder="Nome">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [formControl]="email" required [(ngModel)]="user.email" name="email" type="email" placeholder="Email">
+            <mat-error *ngIf="email.invalid">{{getEmailMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input matInput required [(ngModel)]="user.senha" name="senha" type="password" placeholder="Senha">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Telefone</mat-label>
+            <input matInput required [(ngModel)]="user.telefone" name="telefone" type="text" placeholder="Telefone" mask="(00) 00000-0000">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Endereço</mat-label>
+            <input matInput required [(ngModel)]="user.endereco" name="endereco" type="text" placeholder="Endereço">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="register()">Criar Conta</button>
+        <button mat-raised-button color="accent" (click)="login()">Fazer Login</button>
+    </mat-card-content>
+</mat-card>

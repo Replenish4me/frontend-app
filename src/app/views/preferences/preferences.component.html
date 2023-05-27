@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<!-- loading -->
+<mat-spinner *ngIf="!carregado"></mat-spinner>
+
+<div *ngIf="carregado" class="container">
+    <h2>
+        <mat-icon>
+            settings
+        </mat-icon>
+        Preferências
+    </h2>
+    <mat-form-field>
+        <mat-label>Entregas Automaticas</mat-label>
+        <select matNativeControl required [(ngModel)]="preferences.aprovar_automaticamente">
+            <option value=false>Não</option>
+            <option value=true>Sim</option>
+        </select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Periodicidade</mat-label>
+        <select matNativeControl required [(ngModel)]="preferences.frequencia">
+            <option value=0>Semanal</option>
+            <option value=1>Bisemanal</option>
+            <option value=2>Mensal</option>
+        </select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Dia da semana</mat-label>
+        <select matNativeControl required [(ngModel)]="preferences.dia_semana">
+            <option value=0 >Segunda-feira</option>
+            <option value=1>Terça-feira</option>
+            <option value=2>Quarta-feira</option>
+            <option value=3>Quinta-feira</option>
+            <option value=4>Sexta-feira</option>
+            <option value=5>Sábado</option>
+            <option value=6>Domingo</option>
+        </select>
+    </mat-form-field>
+
+    <br>
+
+    <button mat-raised-button color="primary" (click)="updatePreferences()"> Salvar </button>
+</div>

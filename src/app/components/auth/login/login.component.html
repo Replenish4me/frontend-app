@@ -1,0 +1,15 @@
+<mat-card class="container">
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content class="column">
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input (keyup.enter)="login()" matInput [(ngModel)]="email" name="email" type="email" placeholder="Email">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input (keyup.enter)="login()" matInput [(ngModel)]="password" name="password" type="password" placeholder="Password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+        <button mat-raised-button color="accent" (click)="register()">Criar Conta</button>
+    </mat-card-content>
+</mat-card>

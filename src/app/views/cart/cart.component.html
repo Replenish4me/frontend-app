@@ -1,0 +1,44 @@
+<app-header></app-header>
+<mat-spinner *ngIf="!carregado"></mat-spinner>
+<table *ngIf="carregado">
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantdade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let item of carrinho">
+            <td>
+                {{item.nome}}
+            </td>
+            <td>
+                {{item.preco | currency:'BRL'}}
+            </td>
+            <td>
+                <button mat-button (click)="removeOneUnity(item.produto_id, item.quantidade)"> - </button>
+                {{item.quantidade}}
+                <button mat-button (click)="addToCart(item.produto_id)"> + </button>
+            </td>
+            <td>
+                {{item.quantidade * item.preco | currency:'BRL'}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                    Total
+            </td>
+            <td>
+                {{total | currency:'BRL'}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <button mat-raised-button color="primary" (click)="checkout()"> Finalizar Compra </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

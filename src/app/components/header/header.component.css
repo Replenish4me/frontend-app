@@ -1,0 +1,23 @@
+.title {
+    font-size: 2rem;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+}
+
+a {
+    cursor: pointer;
+    padding: 1rem 10px 1rem 10px;
+    transition: 0.5s;
+}
+
+a:hover {
+    background-color: blueviolet;
+    transition: 0.5s;
+}
+
+.right {
+    width: 100%;
+    text-align: right;
+}

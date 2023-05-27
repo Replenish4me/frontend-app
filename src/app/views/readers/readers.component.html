@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="title">Leitores</div>
+
+<div class="input">
+    <mat-form-field>
+        <mat-label>Numero do Leitor</mat-label>
+        <input matInput name="Ex: 123" [(ngModel)]="leitor_id">
+        <button mat-button matSuffix (click)="addReader()">adicionar</button>
+    </mat-form-field>
+</div>
+
+<mat-spinner *ngIf="!carregado"></mat-spinner>
+
+<table *ngIf="carregado">
+    <thead>
+        <tr>
+            <th>Id do Leitor</th>
+            <th>Excluir</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let item of leitores">
+                <td>
+                    Leitor {{item}}
+                </td>
+                <td>
+                    <button mat-button (click)="removeReader(item)"><mat-icon>delete</mat-icon></button>
+                </td>
+            </tr>
+        </tbody>
+</table>

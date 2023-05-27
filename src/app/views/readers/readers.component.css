@@ -1,0 +1,19 @@
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input {
+    text-align: center;
+    margin: auto;
+}
+
+table {
+    margin: auto;
+}
+
+mat-icon {
+    color: red;
+}
